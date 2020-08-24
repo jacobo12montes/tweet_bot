@@ -29,7 +29,7 @@ describe Bot do
             expect(bot.check_bots(5, 0)).to eql(true) 
         end
 
-        it 'Should return false when the parameters are diferent from to zero' do
+        it 'Should return false when the parameters are diferent from zero' do
             expect(bot.check_bots(5, 5)).to eql(false) 
         end
     end
