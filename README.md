@@ -28,7 +28,15 @@ $ cd Tweet_Bot/bin
 ```sh
 main
 ```
+4) When the comand line ask you for a key word type the word or user name of your interest. 
+```sh
+put your query
+```
 
+5) Check detailed info 
+```sh
+If you want to check for more info press "y" when the console ask you
+```
 ## :arrow_forward: Usage
 
 Load the main file by opening your console
