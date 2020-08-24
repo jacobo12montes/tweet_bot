@@ -18,7 +18,7 @@ class Bot
 
   def searcher(query)
     user = {}
-    @client.search(query).take(3).each do |tweet|
+    @client.search(query).take(1000).each do |tweet|
       if user.key? tweet.user.screen_name
         user[tweet.user.screen_name][5] += 1
         user[tweet.user.screen_name][4] << tweet.full_text
