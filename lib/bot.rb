@@ -18,16 +18,17 @@ class Bot
 
   def searcher(query)
     user = {}
-    @client.search(query).take(10).each do |tweet|
+    @client.search(query).take(3).each do |tweet|
       if user.key? tweet.user.screen_name
-        user[tweet.user.screen_name][0] += 1
+        user[tweet.user.screen_name][5] += 1
         user[tweet.user.screen_name][4] << tweet.full_text
       else
-        user[tweet.user.screen_name] = [1,
+        user[tweet.user.screen_name] = [tweet.user.location,
                                         tweet.user.name,
                                         tweet.user.friends_count,
                                         tweet.user.followers_count,
-                                        [tweet.full_text]]
+                                        [tweet.full_text],
+                                        1]
       end
     end
 

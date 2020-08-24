@@ -1,55 +1,44 @@
-#!/usr/bin/env ruby
-
-# frozen_string_literal: true
-
 require_relative '../lib/bot.rb'
 
 bot = Bot.new
 
-puts 'Enter your key word/words'
-
-query = gets.chomp
-
-user = bot.searcher(query)
-
 loop do
   system 'clear'
-  puts 'User ID                #full text of tweets'
-  user.each { |key, value| puts "#{key} = #{value[4]}" }
-
-  puts "\n* * *   posible bots   * * *\n"
-  user.each { |key, value| p "#{key} = #{value[0]}" if bot.check(value[2], value[3]) }
-
-  puts "\nWould you like to check the information of a user?? (y|n)"
+  puts "\n"
+  puts "\n"
+  puts "                            WELLCOME TO FINDING BOT \n
+  It will help you to find tweets base on your key word\n 
+  To start using it type your key word/words or the user name of your choice" 
+  user = bot.searcher(gets.chomp)
+  user.each { |key, value| puts "USER ID = #{key} \n\n LOCATION = #{value[0]} \n\n TWEET = #{value[4]} \n\n" }
+  user.each { |key, value| p "Posible bots \n\n #{key} = #{value[5]}" if bot.check(value[2], value[3]) }
+  puts "Would you like to check the information of a user?? (y|n)"
   resp = gets.chomp
-
-  case resp
-  when 'y' || 'Y'
-    puts "\nEnter the user id"
+  if resp.eql?('y')
+    puts "Enter the user id"
     resp = gets.chomp
-
     user.each do |key, value|
       if key.eql?(resp)
-
-        puts "\n* * * * * * * * * * * * * * * * * * * *"
-        puts "\nUser information\n\n"
-        puts "ID  => #{key}"
+        puts "\n User information"
+        puts "\nID  => #{key}"
         puts "Name => #{value[1]}"
-        puts "tweet(s)  => #{value[0]} "
-        puts "following => #{value[2]} "
-        puts "followers => #{value[3]} "
-        puts '=>Full text'
+        puts "tweet(s)  => #{value[5]}"
+        puts "following => #{value[2]}"
+        puts "followers => #{value[3]}"
+        puts "=>Full text"
         for t in value[4]
-          puts "=> #{t}"
+          puts "\n=> #{t}"
         end
+        puts 'Would like to exit? (y|n)'
+        resp = gets.chomp
+        break if resp.eql?('y')  
       end
     end
-  end
-
-  puts 'Would like to exit? (y|n)'
-  resp = gets.chomp
-
-  break if resp.eql?('y')
+  else
+    puts 'Would like to exit? (y|n)'
+    resp = gets.chomp
+    break if resp.eql?('y')
+  end 
 end
 
 
