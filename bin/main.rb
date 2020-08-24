@@ -31,10 +31,6 @@ followers => #{value[3]}"
         end  
       end
     end
-  # else
-  #   puts 'Would like to exit? (y|n)'
-  #   resp = gets.chomp
-  #   break if resp.eql?('y') || resp.eql?('Y')
   end
   puts 'Would like to exit? (y|n)'
         resp = gets.chomp
