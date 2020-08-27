@@ -1,4 +1,3 @@
-require 'pry'
 require 'twitter'
 
 YOUR_CONSUMER_KEY = 'NCufQgn4ZTGhgdL5McveRwsZW'.freeze
