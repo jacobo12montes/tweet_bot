@@ -1,5 +1,5 @@
 # tweet_bot
-This is a twitter bot for an educational purpose, this bot can find tweets and users based on a keyword that it is passed by the user in the CLI, and also it can check if the user is probably a robot based on the number of friends and followers.
+This is a twitter bot for an educational purpose, this bot can find tweets and users based on a keyword that it is passed by the user in the CLI, and also it can check if the user is probably a robot based on the number of friends and followers. To use it you have to install the twitter gem and the rspec gem you can find it in https://rubygems.org
 
 
 ## :package: Built With
